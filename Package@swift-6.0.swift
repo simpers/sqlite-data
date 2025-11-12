@@ -53,6 +53,9 @@ let package = Package(
         .product(name: "Dependencies", package: "swift-dependencies"),
         .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
         .product(name: "StructuredQueriesTestSupport", package: "swift-structured-queries"),
+      ],
+      linkerSettings: [
+        .linkedFramework("XCTest", .when(configuration: .debug))
       ]
     ),
     .testTarget(
